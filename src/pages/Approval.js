@@ -1,12 +1,16 @@
 import { useIsFocused } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, TextInput, Button, Alert } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, TextInput, Button, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Approval = ({ navigation, route }) => {
     const { category } = route.params;
     const [data, setData] = useState([]);
     const [keyword, setKeyword] = useState('');
+    const [page, setPage] = useState(1);
+    const [limit, setLimit] = useState(3);
+    const [total, setTotal] = useState(0);
+    const [sort, setSort] = useState(true);
     const isFocused = useIsFocused();
     const readAsyncStorage = async () => {
         //read data async storage
@@ -36,12 +40,26 @@ const Approval = ({ navigation, route }) => {
 
     }
 
+    const sortByName = async (text) => {
+        setSort(!sort)
+        const res = await fetch('http://192.168.35.160:3000/employees?name_like=' + text + '&_sort=name&_order=' + (sort ? 'asc' : 'desc') + '_page=' + page + '&_limit=' + limit)
+        const datas = await res.json()
+        if (datas.length === 0) {
+            alert('Data Not Found')
+        }
+        else {
+            setPage(1 + 1)
+            setData(datas)
+        }
+
+    }
+
     useEffect(() => {
         getData()
         readAsyncStorage()
     }, [isFocused])
     return (
-        <View style={{
+        <ScrollView style={{
             flex: 1,
             backgroundColor: '#fff',
             padding: 20
@@ -54,6 +72,10 @@ const Approval = ({ navigation, route }) => {
                 />
                 <Button title="Search" onPress={() => search(keyword)} />
             </View>
+            <View style={{ marginBottom: 10 }}>
+                <Button title="Sort By Name" onPress={() => sortByName(keyword)} />
+            </View>
+
             <Text style={styles.label}>List Reimbursement</Text>
 
             {
@@ -81,7 +103,15 @@ const Approval = ({ navigation, route }) => {
             }
 
 
-        </View>
+            {/* next page  */}
+            <View style={{ marginBottom: 10 }} />
+            <Button color={"green"} title="Next Page" onPress={() =>
+                sortByName(keyword)
+            } />
+            <View style={{ marginBottom: 40 }} />
+
+
+        </ScrollView>
     );
 }
 

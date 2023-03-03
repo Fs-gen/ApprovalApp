@@ -1,38 +1,88 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "number": "001",
-      "name": "Sebastian",
-      "claimDate": "2023-03-03",
-      "amount": 1000,
-      "status": "Approved",
-      "category": "medical",
-      "desc": "I need to see a doctor"
-    },
-    {
-      "id": 2,
-      "number": "002",
-      "name": "Bagus",
-      "claimDate": "2023-03-01",
-      "amount": 1000,
-      "status": "Rejected",
-      "category": "transport",
-      "desc": " I need to go to work"
-    }
-  ],
-  "user": [
-    {
-      "id": 1,
-      "name": "Firis",
-      "username": "admin",
-      "password": "123"
-    }
-  ],
-  "category": [
-    "medical",
-    "optical",
-    "dental",
-    "transport"
-  ]
+    "employees": [
+        {
+            "id": 1,
+            "number": "001",
+            "name": "Sebastian",
+            "claimDate": "2023-03-03",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "medical",
+            "desc": "I need to see a doctor"
+        },
+        {
+            "id": 2,
+            "number": "002",
+            "name": "Bagus",
+            "claimDate": "2023-03-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "transport",
+            "desc": " I need to go to work"
+        },
+        {
+            "id": 3,
+            "number": "003",
+            "name": "Ilham",
+            "claimDate": "2023-02-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "transport",
+            "desc": " I need to go to work"
+        },
+        {
+            "id": 4,
+            "number": "004",
+            "name": "Bagus",
+            "claimDate": "2023-03-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "optical",
+            "desc": " I need to see a doctor"
+        },
+        {
+            "id": 5,
+            "number": "005",
+            "name": "Riski",
+            "claimDate": "2022-03-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "transport",
+            "desc": " I need to go to work"
+        },
+        {
+            "id": 6,
+            "number": "006",
+            "name": "siska",
+            "claimDate": "2023-03-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "transport",
+            "desc": " I need to go to work"
+        },
+        {
+            "id": 7,
+            "number": "007",
+            "name": "Limbad",
+            "claimDate": "2023-03-01",
+            "amount": 1000,
+            "status": "Approved",
+            "category": "optical",
+            "desc": " I need to see a doctor"
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "name": "Firis",
+            "username": "admin",
+            "password": "123"
+        }
+    ],
+    "category": [
+        "medical",
+        "optical",
+        "dental",
+        "transport"
+    ]
 }
