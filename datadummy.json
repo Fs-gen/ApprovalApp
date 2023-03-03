@@ -1,0 +1,38 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "number": "001",
+      "name": "Sebastian",
+      "claimDate": "2023-03-03",
+      "amount": 1000,
+      "status": "Approved",
+      "category": "medical",
+      "desc": "I need to see a doctor"
+    },
+    {
+      "id": 2,
+      "number": "002",
+      "name": "Bagus",
+      "claimDate": "2023-03-01",
+      "amount": 1000,
+      "status": "Rejected",
+      "category": "transport",
+      "desc": " I need to go to work"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Firis",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "category": [
+    "medical",
+    "optical",
+    "dental",
+    "transport"
+  ]
+}
